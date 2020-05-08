@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!--<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='./style.css')}}">--><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <a href="{{url_for('hello')}}" class="brand"><h2><span style="color:yellow">A</span>lpha <span style="color:yellow">M</span>L</a></h2>
+		<div class="collapse navbar-collapse" id='navbarMenu'>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a href="{{url_for('hello')}}" class="nav-link">Spam Predictor For Messages</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p class='para'>Enter Your Message Here:-</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="6" cols="60"></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="predict">
+
+	</form>
+	</div>
+</body>
+</html>
