@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.navbar-brand{
+    font-family: 'Pacifico';
+    font-size: 20px;
+    color: lightcoral !important;
+}
