@@ -21,26 +21,31 @@
 			</ul>
 		</div>
 	</nav>
-
+	<div class="pred_area">
 	<div class="ml-container text-center">
 		<form action="{{url_for('predict')}}" method="POST">
-			<br/><p class='para'><strong>Enter Your Message Here:-</strong></p>
-			
-			<textarea name="message" rows="6" cols="60"></textarea>
+			<br/><p class='para' style="font-size:20px"><strong>Enter Your Message Here:-</strong></p>
+				{% if msg %}
+				<textarea name="message" rows="6" cols="60">{{msg}}</textarea>	
+				{% else %}
+				<textarea name="message" rows="6" cols="60"></textarea>
+				{% endif %}
 			<br/>
-			<input type="submit" class="btn-info mt-3" value="Predict">
+			<input type="submit" class="btn-primary mt-3" value="Predict">
 		</form>
 	</div>
 
 	<div class = "fresult mt-3 text-center">
 		{% with messages = get_flashed_messages(with_categories=true) %}
 			{% if messages %}
-			<ul>
-				{% for category, message in messages %}
-					<li class="alert alert-{{ category }} col-md-3 mx-auto">{{message}}</li>
-				{% endfor %}
+			{% for category, message in messages %}
+				<div class="alert alert-{{ category }} col-md-3 mx-auto">
+					<strong>{{category}}! </strong>{{message}}
+				</div>
+			{% endfor %}
 			{% endif %}
 		{% endwith %}
+	</div>
 	</div>
 </body>
 </html>

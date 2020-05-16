@@ -12,8 +12,8 @@ app.config['SECRET_KEY'] = os.urandom(25)
 @app.route('/',methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
-        mess = request.form['message']
-        mess = [mess]
+        msg = request.form['message']
+        mess = [msg]
         pickle_f = open('pipeline.pickle','rb')
         trans = pickle.load(pickle_f)
         pred = trans.predict(mess)
@@ -24,7 +24,8 @@ def predict():
         else:
             my_prediction = "It's a Spam Message"
             mode = 'danger'
-        flash(my_prediction, mode)
+        flash(my_prediction,mode)
+        return render_template('index.html',msg=msg)
     return render_template('index.html')
 
 def msg_processor(mess):
