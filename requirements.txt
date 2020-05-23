@@ -1,11 +1,4 @@
 Flask
-Flask-Bcrypt
-Flask-Bootstrap
-Flask-CKEditor
-Flask-MySQLdb
-Flask-SQLAlchemy
-Flask-WTF
-gunicorn
 Jinja2
 nltk
 numpy
@@ -13,4 +6,3 @@ pandas
 pickleshare
 requests
 scikit-learn
-sklearn
